@@ -42,7 +42,7 @@ const Home = () => {
                     <h2 className="font-bold text-2xl md:text-4xl my-4 mb-10">Explore Sri Mandir</h2>
                     <div className="flex flex-col md:flex-row sm:justify-center md:justify-between" style={{ width: "90%", margin: "auto" }}>
                         {[seva, astro, chadhava, festivals, music, mandir_darshan, sahitya, panchang].map((src, index) => (
-                            <div key={index} className=" md:w-1/8 p-4 text-center">
+                            <div key={index} className=" w-1/8 sm:w-1/2 p-4 text-center">
                                 <img src={src} alt="" className="h-20 w-20 mx-auto" />
                                 <p className="mt-2  font-semibold text-gray-600">Book temples</p>
                             </div>

@@ -201,7 +201,7 @@ const Navbar = () => {
                 </div>
 
                 <div
-                    class="md:hidden bg-white bg-opacity-90"
+                    class="md:hidden bg-white "
                     id="mobile-menu"
                     style={{
                         display: mobilestate ? "flex" : "none",
