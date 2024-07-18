@@ -68,7 +68,7 @@ const Puja = () => {
                                 18 July, Thursday, Ashadha Shukla Dwadashi
                             </p>
                             <Link to={"/puja/1"}>
-                                <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
+                                <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICPATE</button>
                             </Link>
                         </div>
                         <div className="border rounded-md my-6" style={{ width: "32%" }}>
@@ -85,7 +85,7 @@ const Puja = () => {
                                 18 July, Thursday, Ashadha Shukla Dwadashi
                             </p>
                             <Link to={"/puja/2"}>
-                                <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
+                                <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICPATE</button>
                             </Link>
                         </div>
                         <div className="border rounded-md my-6" style={{ width: "32%" }}>
@@ -102,7 +102,7 @@ const Puja = () => {
                                 18 July, Thursday, Ashadha Shukla Dwadashi
                             </p>
                             <Link to={"/puja/3"}>
-                                <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
+                                <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICPATE</button>
                             </Link>
                         </div>
                     </div>

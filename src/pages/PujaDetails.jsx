@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -21,6 +21,7 @@ const PujaDetails = () => {
     const [showModal, setShowModal] = useState(false);
     const [whatsappNumber, setWhatsappNumber] = useState('');
     const [userName, setUserName] = useState('');
+    const navigate = useNavigate()
 
     const pujas = {
         1: {
@@ -92,6 +93,7 @@ const PujaDetails = () => {
         console.log(`WhatsApp Number: ${whatsappNumber}, Name: ${userName}`);
         // Close the modal
         setShowModal(false);
+        navigate("/review")
     };
 
     return (
