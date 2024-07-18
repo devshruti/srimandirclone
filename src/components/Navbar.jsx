@@ -14,9 +14,6 @@ const Navbar = () => {
     const [state, setstate] = useState(false);
     const [mobilestate, setmobilestate] = useState(false);
 
-
-
-
     return (
         <div class="min-h-full" >
             <nav class="fixed h-16 bg-white top-0 left-0 w-full z-50">
@@ -72,7 +69,7 @@ const Navbar = () => {
                                 <div>
                                     <button
                                         type="button"
-                                        class="flex max-w-xs items-center font-bold rounded-full p-1 text-xl border border-4 border-gray-400 hover:border-orange-600"
+                                        class="flex max-w-xs items-center font-bold rounded-full p-1 text-xl border border-2 border-gray-400 hover:border-orange-600"
                                         id="user-menu-button"
                                         aria-expanded="false"
                                         aria-haspopup="true"
