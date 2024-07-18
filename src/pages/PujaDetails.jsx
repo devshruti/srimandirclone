@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css";
@@ -18,6 +18,9 @@ import { FaCircleDot } from "react-icons/fa6";
 const PujaDetails = () => {
     const { id } = useParams();
     const selectPackageRef = useRef(null);
+    const [showModal, setShowModal] = useState(false);
+    const [whatsappNumber, setWhatsappNumber] = useState('');
+    const [userName, setUserName] = useState('');
 
     const pujas = {
         1: {
@@ -77,6 +80,20 @@ const PujaDetails = () => {
             });
         }
     };
+
+    const toggleModal = () => {
+        setShowModal(!showModal);
+    };
+
+    // Handle form submission
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        // Here you can perform actions with whatsappNumber and userName, such as sending them to a backend or displaying them in a confirmation message
+        console.log(`WhatsApp Number: ${whatsappNumber}, Name: ${userName}`);
+        // Close the modal
+        setShowModal(false);
+    };
+
     return (
         <>
             <Navbar />
@@ -156,9 +173,9 @@ const PujaDetails = () => {
                                         Sacred tirth prasad will be sent to your address within 8-10 days.
                                     </li>
                                     <hr />
-                                    <Link to={"/puja/1"}>
-                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
-                                    </Link>
+                                    
+                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }} onClick={toggleModal}>PARTICIPATE</button>
+                                    
                                 </ul>
                             </div>
                             <div className='border border-orange-500 rounded pt-4 bg-gradient-to-b from-orange-50 to-white mx-2'>
@@ -188,42 +205,9 @@ const PujaDetails = () => {
                                         Sacred tirth prasad will be sent to your address within 8-10 days.
                                     </li>
                                     <hr />
-                                    <Link to={"/puja/1"}>
-                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
-                                    </Link>
-                                </ul>
-                            </div>
-                            <div className='border border-orange-500 rounded pt-4 bg-gradient-to-b from-orange-50 to-white mx-2'>
-                                <h1 className='text-orange-500 text-5xl my-4' >₹851</h1>
-                                <p className='text-2xl font-semibold text-orange-500 my-2'>Individual Puja</p>
-                                <p className='text-xl font-semibold mb-4 text-gray-500 my-2'>Puja for 1 Person</p>
-                                <hr />
-                                <ul className='mx-4 text-left my-2'>
-
-                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
-                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
-                                        Pandit ji will call out your name and gotra during the puja sankalp.
-                                    </li>
-                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
-                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
-                                        Bhog consisting of fruits, sweets, and dry fruits will be offered to Batuk Bhairav at Shri Batuk Bhairav Temple, Kashi.
-                                    </li>
-                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
-                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
-                                        Opt for additional offerings like Vastra Daan, Anna Daan, Gau Seva, or Deep Daan to be done in your name.
-                                    </li>
-                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
-                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
-                                        Upon completion, a video of your puja and offering will be shared with you on your registered WhatsApp number or can be found in your booking history within 3-4 days.
-                                    </li>
-                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
-                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
-                                        Sacred tirth prasad will be sent to your address within 8-10 days.
-                                    </li>
-                                    <hr />
-                                    <Link to={"/puja/1"}>
-                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
-                                    </Link>
+                                    
+                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }} onClick={toggleModal}>PARTICIPATE</button>
+                                    
                                 </ul>
                             </div>
                             <div className='border border-orange-500 rounded pt-4 bg-gradient-to-b from-orange-50 to-white mx-2'>
@@ -254,14 +238,71 @@ const PujaDetails = () => {
                                         Sacred tirth prasad will be sent to your address within 8-10 days.
                                     </li>
                                     <hr />
-                                    <Link to={"/puja/1"}>
-                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }}>PARTICIPATE</button>
-                                    </Link>
+                                    
+                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }} onClick={toggleModal}>PARTICIPATE</button>
+                                    
+                                </ul>
+                            </div>
+                            <div className='border border-orange-500 rounded pt-4 bg-gradient-to-b from-orange-50 to-white mx-2'>
+                                <h1 className='text-orange-500 text-5xl my-4' >₹851</h1>
+                                <p className='text-2xl font-semibold text-orange-500 my-2'>Individual Puja</p>
+                                <p className='text-xl font-semibold mb-4 text-gray-500 my-2'>Puja for 1 Person</p>
+                                <hr />
+                                <ul className='mx-4 text-left my-2'>
+
+                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
+                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
+                                        Pandit ji will call out your name and gotra during the puja sankalp.
+                                    </li>
+                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
+                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
+                                        Bhog consisting of fruits, sweets, and dry fruits will be offered to Batuk Bhairav at Shri Batuk Bhairav Temple, Kashi.
+                                    </li>
+                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
+                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
+                                        Opt for additional offerings like Vastra Daan, Anna Daan, Gau Seva, or Deep Daan to be done in your name.
+                                    </li>
+                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
+                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
+                                        Upon completion, a video of your puja and offering will be shared with you on your registered WhatsApp number or can be found in your booking history within 3-4 days.
+                                    </li>
+                                    <li className='flex my-1 text-lg text-gray-600 items-center mt-3'>
+                                        <FaCircleDot className="text-orange-500 w-4 h-8 mr-2 self-start flex-shrink-0" />
+                                        Sacred tirth prasad will be sent to your address within 8-10 days.
+                                    </li>
+                                    <hr />
+                                    
+                                        <button className="border bg-green-500 mx-2 mx-auto py-2 rounded-lg font-semibold text-white my-2" style={{ width: "95%" }} onClick={toggleModal}>PARTICIPATE</button>
+                                    
                                 </ul>
                             </div>
                         </div>
                     </div>
                 </div>
+                {showModal && (
+                    <div className="fixed inset-0 bg-gray-900 bg-opacity-50 flex justify-center items-center">
+                        <div className="bg-white p-8 rounded-lg max-w-md w-full">
+                            <h2 className="text-xl text-left font-bold mb-4">Fill your details for Puja</h2>
+                            <hr />
+                            <form onSubmit={handleSubmit}>
+                              <div className="mb-4">
+                                   <h2 className="text-lg text-left font-bold mt-4">Enter Your Whatsapp Mobile Number</h2>
+                            <p className="text-left">Your Puja booking updates like Puja Photos, Videos and other details will be sent on WhatsApp on below number.</p>
+                               {/* <label htmlFor="whatsappNumber" className="block text-sm font-medium text-gray-700">WhatsApp Number</label> */}
+                                    <input type="text" id="whatsappNumber" name="whatsappNumber" value={whatsappNumber} onChange={(e) => setWhatsappNumber(e.target.value)} className="mt-1 block w-full border h-10 border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required />
+                                </div>
+                                <div className="mb-4">
+                                <h2 className="text-lg text-left font-bold mt-4">Enter Your Name</h2>
+                                {/* <label htmlFor="userName" className="block text-sm font-medium text-gray-700">Your Name</label> */}
+                                    <input type="text" id="userName" name="userName" value={userName} onChange={(e) => setUserName(e.target.value)} className="mt-1 block w-full border  border-gray-300 h-10 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm" required />
+                                </div>
+                                <div className="flex justify-end">
+                                    <button type="submit" className="bg-orange-500 w-full py-2 px-4 rounded-lg text-white font-semibold">Next</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                )}
             </div>
         </>
     );
